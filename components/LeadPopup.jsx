@@ -10,10 +10,10 @@ export default function LeadPopup() {
         name: '',
         email: '',
         phone: '',
-        websiteType: 'Dental Clinic',
+        websiteType: 'Business Website',
+        purpose: ''
     });
 
-    // Auto open based on context trigger
     useEffect(() => {
         if (popupTrigger && !open && !submitted) {
             setOpen(true);
@@ -40,15 +40,16 @@ export default function LeadPopup() {
             });
             if (res.ok) {
                 setSubmitted(true);
-                handleClose();
-                alert('Thank you! Your request has been received.');
+                setOpen(false);
+                closePopup();
+                alert('Success! We will contact you shortly to start your website.');
             } else {
                 const err = await res.json();
                 alert('Error: ' + (err.error || 'Submission failed'));
             }
         } catch (err) {
             console.error(err);
-            alert('Network error');
+            alert('Submission failed. Please check your connection.');
         }
     };
 
@@ -57,43 +58,48 @@ export default function LeadPopup() {
     return (
         <div className="lead-popup-overlay" onClick={handleClose}>
             <div className="lead-popup" onClick={(e) => e.stopPropagation()}>
-                <button className="close-btn" onClick={handleClose} style={{
-                    position: 'absolute',
-                    top: '15px',
-                    right: '15px',
-                    background: 'none',
-                    border: 'none',
-                    color: '#fff',
-                    fontSize: '1.5rem',
-                    cursor: 'pointer'
-                }}>&times;</button>
-                <h2>Get Your Website</h2>
+                <button className="popup-close" onClick={handleClose}>&times;</button>
+                <div className="popup-header">
+                    <h2>Launch Your <span className="gradient-text">AI Website</span></h2>
+                    <p>Enter your details below and our team will build your custom website.</p>
+                </div>
                 <form onSubmit={handleSubmit} className="lead-form">
-                    <label>
-                        Full Name
-                        <input type="text" name="name" value={form.name} onChange={handleChange} required />
-                    </label>
-                    <label>
-                        Email Address
-                        <input type="email" name="email" value={form.email} onChange={handleChange} required />
-                    </label>
-                    <label>
-                        Contact Number
-                        <input type="tel" name="phone" value={form.phone} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Type of Website
+                    <div className="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" value={form.name} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="john@example.com" value={form.email} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Industry / Website Type</label>
                         <select name="websiteType" value={form.websiteType} onChange={handleChange}>
-                            <option>Dental Clinic</option>
-                            <option>Medical Clinic</option>
-                            <option>Real Estate</option>
-                            <option>Gym</option>
-                            <option>Restaurant</option>
                             <option>Business Website</option>
-                            <option>Other</option>
+                            <option>Health Clinic / Dental</option>
+                            <option>Real Estate</option>
+                            <option>E-commerce Shop</option>
+                            <option>Personal Portfolio</option>
+                            <option>Restaurant / Cafe</option>
                         </select>
-                    </label>
-                    <button type="submit" className="btn-primary btn-large">Get My Website</button>
+                    </div>
+                    <div className="form-group">
+                        <label>Purpose of Website</label>
+                        <textarea 
+                            name="purpose" 
+                            rows="3" 
+                            placeholder="Briefly describe what you want to achieve (e.g., I want to book appointments for my clinic)" 
+                            value={form.purpose} 
+                            onChange={handleChange} 
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" className="btn-primary btn-full">Build My Website Now</button>
+                    <p className="form-footer">No credit card required. Free demo included.</p>
                 </form>
             </div>
         </div>
