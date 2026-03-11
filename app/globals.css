@@ -1,0 +1,71 @@
+/* globals.css – imports the original styles and adds new modal & floating button styles */
+@import "./styles.css";
+
+/* Lead Popup Modal */
+.lead-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.lead-popup {
+    background: var(--bg2);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    max-width: 420px;
+    width: 90%;
+    box-shadow: var(--shadow-glow);
+}
+
+.lead-popup h2 {
+    margin-bottom: 24px;
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text);
+}
+
+.lead-form label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: .9rem;
+    color: var(--text-2);
+}
+
+.lead-form input,
+.lead-form select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.whatsapp-float img {
+    width: 28px;
+    height: 28px;
+}

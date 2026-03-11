@@ -1,0 +1,460 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentForge AI – Logo System</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: #060613;
+            font-family: 'Inter', sans-serif;
+            color: #f0f0ff;
+            min-height: 100vh;
+            padding: 60px 40px
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: rgba(240, 240, 255, .35);
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            text-align: center
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 980px;
+            margin: 0 auto
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 20px;
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px
+        }
+
+        .card.dark-bg {
+            background: #0d0d20
+        }
+
+        .card.light-bg {
+            background: #f5f5fa
+        }
+
+        .card-label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(240, 240, 255, .35);
+            margin-top: 4px
+        }
+
+        .card.light-bg .card-label {
+            color: rgba(20, 20, 60, .4)
+        }
+
+        .full {
+            grid-column: 1/3
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AgentForge AI — Logo System</h1>
+
+    <div class="grid">
+
+        <!-- 01 :: ICON ONLY -->
+        <div class="card">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="hexG1" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#6366f1" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                    <linearGradient id="hexG2" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#4338ca" />
+                        <stop offset="100%" stop-color="#0891b2" />
+                    </linearGradient>
+                    <radialGradient id="glowR" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#818cf8" stop-opacity=".5" />
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+                    </radialGradient>
+                    <filter id="glow1">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <filter id="nodeGlow">
+                        <feGaussianBlur stdDeviation="2" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Outer glow -->
+                <circle cx="60" cy="60" r="56" fill="url(#glowR)" opacity=".4" />
+
+                <!-- Hexagon body -->
+                <path d="M60 8 L105 33 L105 83 L60 108 L15 83 L15 33 Z" fill="url(#hexG2)" opacity=".18" />
+                <path d="M60 8 L105 33 L105 83 L60 108 L15 83 L15 33 Z" fill="none" stroke="url(#hexG1)"
+                    stroke-width="1.8" opacity=".7" />
+
+                <!-- Inner hexagon rim -->
+                <path d="M60 18 L97 40 L97 80 L60 102 L23 80 L23 40 Z" fill="none" stroke="url(#hexG1)"
+                    stroke-width=".8" opacity=".25" />
+
+                <!-- Neural network lines -->
+                <line x1="60" y1="36" x2="38" y2="72" stroke="url(#hexG1)" stroke-width="1.4" opacity=".5" />
+                <line x1="60" y1="36" x2="82" y2="72" stroke="url(#hexG1)" stroke-width="1.4" opacity=".5" />
+                <line x1="38" y1="72" x2="82" y2="72" stroke="url(#hexG1)" stroke-width="1.4" opacity=".5" />
+                <!-- Center to nodes -->
+                <line x1="60" y1="36" x2="60" y2="58" stroke="#22d3ee" stroke-width="1.2" opacity=".6" />
+                <line x1="38" y1="72" x2="55" y2="62" stroke="#22d3ee" stroke-width="1.2" opacity=".6" />
+                <line x1="82" y1="72" x2="65" y2="62" stroke="#22d3ee" stroke-width="1.2" opacity=".6" />
+
+                <!-- Center node -->
+                <circle cx="60" cy="60" r="7" fill="#0d0d20" />
+                <circle cx="60" cy="60" r="7" fill="none" stroke="url(#hexG1)" stroke-width="1.5" />
+                <circle cx="60" cy="60" r="3" fill="#22d3ee" filter="url(#nodeGlow)" />
+
+                <!-- Top node (spark tip) -->
+                <circle cx="60" cy="36" r="5.5" fill="#0d0d20" />
+                <circle cx="60" cy="36" r="5.5" fill="none" stroke="#818cf8" stroke-width="1.5" />
+                <circle cx="60" cy="36" r="2.5" fill="#818cf8" filter="url(#nodeGlow)" />
+
+                <!-- Bottom-left node -->
+                <circle cx="38" cy="72" r="4.5" fill="#0d0d20" />
+                <circle cx="38" cy="72" r="4.5" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+                <circle cx="38" cy="72" r="2" fill="#06b6d4" filter="url(#nodeGlow)" />
+
+                <!-- Bottom-right node -->
+                <circle cx="82" cy="72" r="4.5" fill="#0d0d20" />
+                <circle cx="82" cy="72" r="4.5" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+                <circle cx="82" cy="72" r="2" fill="#06b6d4" filter="url(#nodeGlow)" />
+
+                <!-- Spark accent top -->
+                <path d="M57 22 L60 14 L63 22" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" opacity=".7" />
+            </svg>
+            <div class="card-label">01 · Icon Only</div>
+        </div>
+
+        <!-- 02 :: ICON + TEXT horizontal -->
+        <div class="card">
+            <svg width="280" height="72" viewBox="0 0 280 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="hG1" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#6366f1" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                    <linearGradient id="hG2" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#4338ca" />
+                        <stop offset="100%" stop-color="#0891b2" />
+                    </linearGradient>
+                    <radialGradient id="hGlowR" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#818cf8" stop-opacity=".4" />
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+                    </radialGradient>
+                    <filter id="hNodeGlow">
+                        <feGaussianBlur stdDeviation="1.5" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <linearGradient id="textGrad" x1="100" y1="0" x2="280" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#f0f0ff" />
+                        <stop offset="100%" stop-color="#c7d2fe" />
+                    </linearGradient>
+                    <linearGradient id="aiGrad" x1="0" y1="0" x2="60" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#818cf8" />
+                        <stop offset="100%" stop-color="#22d3ee" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Icon -->
+                <circle cx="36" cy="36" r="32" fill="url(#hGlowR)" opacity=".35" />
+                <path d="M36 5 L61.5 20 L61.5 50 L36 65 L10.5 50 L10.5 20 Z" fill="url(#hG2)" opacity=".18" />
+                <path d="M36 5 L61.5 20 L61.5 50 L36 65 L10.5 50 L10.5 20 Z" fill="none" stroke="url(#hG1)"
+                    stroke-width="1.4" opacity=".75" />
+                <path d="M36 12 L57 24.5 L57 47 L36 59.5 L15 47 L15 24.5 Z" fill="none" stroke="url(#hG1)"
+                    stroke-width=".7" opacity=".2" />
+
+                <!-- neural lines -->
+                <line x1="36" y1="21" x2="22" y2="44" stroke="url(#hG1)" stroke-width="1.1" opacity=".5" />
+                <line x1="36" y1="21" x2="50" y2="44" stroke="url(#hG1)" stroke-width="1.1" opacity=".5" />
+                <line x1="22" y1="44" x2="50" y2="44" stroke="url(#hG1)" stroke-width="1.1" opacity=".5" />
+                <line x1="36" y1="21" x2="36" y2="34" stroke="#22d3ee" stroke-width="1" opacity=".65" />
+                <line x1="22" y1="44" x2="33" y2="37" stroke="#22d3ee" stroke-width="1" opacity=".65" />
+                <line x1="50" y1="44" x2="39" y2="37" stroke="#22d3ee" stroke-width="1" opacity=".65" />
+
+                <!-- Center -->
+                <circle cx="36" cy="36" r="4.5" fill="#0d0d20" />
+                <circle cx="36" cy="36" r="4.5" fill="none" stroke="url(#hG1)" stroke-width="1.3" />
+                <circle cx="36" cy="36" r="2" fill="#22d3ee" filter="url(#hNodeGlow)" />
+                <!-- Top -->
+                <circle cx="36" cy="21" r="3.5" fill="#0d0d20" />
+                <circle cx="36" cy="21" r="3.5" fill="none" stroke="#818cf8" stroke-width="1.2" />
+                <circle cx="36" cy="21" r="1.6" fill="#818cf8" filter="url(#hNodeGlow)" />
+                <!-- BL -->
+                <circle cx="22" cy="44" r="3" fill="#0d0d20" />
+                <circle cx="22" cy="44" r="3" fill="none" stroke="#06b6d4" stroke-width="1.2" />
+                <circle cx="22" cy="44" r="1.3" fill="#06b6d4" filter="url(#hNodeGlow)" />
+                <!-- BR -->
+                <circle cx="50" cy="44" r="3" fill="#0d0d20" />
+                <circle cx="50" cy="44" r="3" fill="none" stroke="#06b6d4" stroke-width="1.2" />
+                <circle cx="50" cy="44" r="1.3" fill="#06b6d4" filter="url(#hNodeGlow)" />
+                <!-- spark -->
+                <path d="M34 12 L36 7 L38 12" fill="none" stroke="#22d3ee" stroke-width="1.2" stroke-linecap="round"
+                    stroke-linejoin="round" opacity=".7" />
+
+                <!-- Text: AgentForge -->
+                <text x="82" y="30" font-family="'Syne',sans-serif" font-weight="800" font-size="22"
+                    fill="url(#textGrad)" letter-spacing="-0.3">AgentForge</text>
+                <!-- AI badge -->
+                <rect x="84" y="38" width="36" height="18" rx="5" fill="url(#hG1)" opacity=".9" />
+                <text x="102" y="51" font-family="'Inter',sans-serif" font-weight="800" font-size="11" fill="#fff"
+                    text-anchor="middle" letter-spacing="1">AI</text>
+            </svg>
+            <div class="card-label">02 · Full Logo (Dark)</div>
+        </div>
+
+        <!-- 03 :: NAVBAR VERSION -->
+        <div class="card full dark-bg">
+            <div class="row">
+                <!-- Compact navbar logo -->
+                <svg width="200" height="44" viewBox="0 0 200 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="nG1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#6366f1" />
+                            <stop offset="100%" stop-color="#06b6d4" />
+                        </linearGradient>
+                        <linearGradient id="nG2" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#4338ca" />
+                            <stop offset="100%" stop-color="#0891b2" />
+                        </linearGradient>
+                        <filter id="nNodeGlow">
+                            <feGaussianBlur stdDeviation="1.2" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="nAiGrad" x1="0" y1="0" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#818cf8" />
+                            <stop offset="100%" stop-color="#22d3ee" />
+                        </linearGradient>
+                    </defs>
+                    <!-- icon -->
+                    <path d="M22 2 L40 12 L40 32 L22 42 L4 32 L4 12 Z" fill="url(#nG2)" opacity=".2" />
+                    <path d="M22 2 L40 12 L40 32 L22 42 L4 32 L4 12 Z" fill="none" stroke="url(#nG1)"
+                        stroke-width="1.3" />
+                    <line x1="22" y1="12" x2="12" y2="29" stroke="url(#nG1)" stroke-width="1" opacity=".5" />
+                    <line x1="22" y1="12" x2="32" y2="29" stroke="url(#nG1)" stroke-width="1" opacity=".5" />
+                    <line x1="12" y1="29" x2="32" y2="29" stroke="url(#nG1)" stroke-width="1" opacity=".5" />
+                    <line x1="22" y1="12" x2="22" y2="20" stroke="#22d3ee" stroke-width=".9" opacity=".7" />
+                    <line x1="12" y1="29" x2="20" y2="23" stroke="#22d3ee" stroke-width=".9" opacity=".7" />
+                    <line x1="32" y1="29" x2="24" y2="23" stroke="#22d3ee" stroke-width=".9" opacity=".7" />
+                    <circle cx="22" cy="22" r="3.5" fill="#060613" />
+                    <circle cx="22" cy="22" r="3.5" fill="none" stroke="url(#nG1)" stroke-width="1.1" />
+                    <circle cx="22" cy="22" r="1.5" fill="#22d3ee" filter="url(#nNodeGlow)" />
+                    <circle cx="22" cy="12" r="2.5" fill="#060613" />
+                    <circle cx="22" cy="12" r="2.5" fill="none" stroke="#818cf8" stroke-width="1" />
+                    <circle cx="22" cy="12" r="1.1" fill="#818cf8" filter="url(#nNodeGlow)" />
+                    <circle cx="12" cy="29" r="2" fill="#060613" />
+                    <circle cx="12" cy="29" r="2" fill="none" stroke="#06b6d4" stroke-width="1" />
+                    <circle cx="12" cy="29" r=".9" fill="#06b6d4" filter="url(#nNodeGlow)" />
+                    <circle cx="32" cy="29" r="2" fill="#060613" />
+                    <circle cx="32" cy="29" r="2" fill="none" stroke="#06b6d4" stroke-width="1" />
+                    <circle cx="32" cy="29" r=".9" fill="#06b6d4" filter="url(#nNodeGlow)" />
+                    <path d="M20.5 6.5 L22 3 L23.5 6.5" fill="none" stroke="#22d3ee" stroke-width="1"
+                        stroke-linecap="round" stroke-linejoin="round" opacity=".7" />
+
+                    <!-- Text -->
+                    <text x="52" y="18" font-family="'Syne',sans-serif" font-weight="800" font-size="15" fill="#f0f0ff"
+                        letter-spacing="-0.2">AgentForge</text>
+                    <rect x="53" y="24" width="24" height="12" rx="3.5" fill="url(#nG1)" />
+                    <text x="65" y="33.5" font-family="'Inter',sans-serif" font-weight="800" font-size="8" fill="#fff"
+                        text-anchor="middle" letter-spacing="1.2">AI</text>
+                </svg>
+            </div>
+            <div class="card-label">03 · Navbar / Compact Version</div>
+        </div>
+
+        <!-- 04 :: APP ICON -->
+        <div class="card">
+            <!-- Large rounded-square app icon -->
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="appBg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#1e1b4b" />
+                        <stop offset="50%" stop-color="#0c1a3a" />
+                        <stop offset="100%" stop-color="#0c2a3a" />
+                    </linearGradient>
+                    <linearGradient id="appG1" x1="24" y1="20" x2="96" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#818cf8" />
+                        <stop offset="100%" stop-color="#22d3ee" />
+                    </linearGradient>
+                    <linearGradient id="appG2" x1="24" y1="20" x2="96" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#6366f1" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                    <filter id="appNodeGlow">
+                        <feGaussianBlur stdDeviation="2.5" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <filter id="appGlowBig">
+                        <feGaussianBlur stdDeviation="8" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- App icon background -->
+                <rect width="120" height="120" rx="26" fill="url(#appBg)" />
+
+                <!-- Soft glow behind icon -->
+                <circle cx="60" cy="60" r="36" fill="#6366f1" opacity=".12" filter="url(#appGlowBig)" />
+
+                <!-- Hexagon -->
+                <path d="M60 20 L91 38 L91 74 L60 92 L29 74 L29 38 Z" fill="#6366f1" opacity=".12" />
+                <path d="M60 20 L91 38 L91 74 L60 92 L29 74 L29 38 Z" fill="none" stroke="url(#appG1)"
+                    stroke-width="1.6" opacity=".8" />
+                <!-- Inner hex -->
+                <path d="M60 28 L84 42 L84 68 L60 82 L36 68 L36 42 Z" fill="none" stroke="url(#appG1)" stroke-width=".8"
+                    opacity=".2" />
+
+                <!-- Neural web -->
+                <line x1="60" y1="34" x2="36" y2="68" stroke="url(#appG2)" stroke-width="1.5" opacity=".55" />
+                <line x1="60" y1="34" x2="84" y2="68" stroke="url(#appG2)" stroke-width="1.5" opacity=".55" />
+                <line x1="36" y1="68" x2="84" y2="68" stroke="url(#appG2)" stroke-width="1.5" opacity=".55" />
+                <line x1="60" y1="34" x2="60" y2="56" stroke="#22d3ee" stroke-width="1.3" opacity=".7" />
+                <line x1="36" y1="68" x2="54" y2="58" stroke="#22d3ee" stroke-width="1.3" opacity=".7" />
+                <line x1="84" y1="68" x2="66" y2="58" stroke="#22d3ee" stroke-width="1.3" opacity=".7" />
+
+                <!-- Center node -->
+                <circle cx="60" cy="57" r="8" fill="#0c1a3a" />
+                <circle cx="60" cy="57" r="8" fill="none" stroke="url(#appG1)" stroke-width="1.6" />
+                <circle cx="60" cy="57" r="3.5" fill="#22d3ee" filter="url(#appNodeGlow)" />
+
+                <!-- Top node -->
+                <circle cx="60" cy="34" r="6" fill="#0c1a3a" />
+                <circle cx="60" cy="34" r="6" fill="none" stroke="#818cf8" stroke-width="1.5" />
+                <circle cx="60" cy="34" r="2.8" fill="#818cf8" filter="url(#appNodeGlow)" />
+
+                <!-- BL node -->
+                <circle cx="36" cy="68" r="5" fill="#0c1a3a" />
+                <circle cx="36" cy="68" r="5" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+                <circle cx="36" cy="68" r="2.2" fill="#06b6d4" filter="url(#appNodeGlow)" />
+
+                <!-- BR node -->
+                <circle cx="84" cy="68" r="5" fill="#0c1a3a" />
+                <circle cx="84" cy="68" r="5" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+                <circle cx="84" cy="68" r="2.2" fill="#06b6d4" filter="url(#appNodeGlow)" />
+
+                <!-- spark tip -->
+                <path d="M57 20 L60 12 L63 20" fill="none" stroke="#22d3ee" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" opacity=".8" />
+            </svg>
+            <div class="card-label">04 · App Icon (iOS / Android)</div>
+        </div>
+
+        <!-- 05 :: LIGHT BG version -->
+        <div class="card light-bg">
+            <svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="lG1" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#6366f1" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                    <linearGradient id="lG2" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#4338ca" />
+                        <stop offset="100%" stop-color="#0891b2" />
+                    </linearGradient>
+                    <filter id="lNodeGlow">
+                        <feGaussianBlur stdDeviation="1.5" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <linearGradient id="lTextGrad" x1="70" y1="0" x2="220" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#1e1b4b" />
+                        <stop offset="100%" stop-color="#1e3a5f" />
+                    </linearGradient>
+                </defs>
+                <path d="M30 4 L52 17 L52 43 L30 56 L8 43 L8 17 Z" fill="url(#lG2)" opacity=".15" />
+                <path d="M30 4 L52 17 L52 43 L30 56 L8 43 L8 17 Z" fill="none" stroke="url(#lG1)" stroke-width="1.4" />
+                <line x1="30" y1="15" x2="16" y2="38" stroke="url(#lG1)" stroke-width="1.1" opacity=".5" />
+                <line x1="30" y1="15" x2="44" y2="38" stroke="url(#lG1)" stroke-width="1.1" opacity=".5" />
+                <line x1="16" y1="38" x2="44" y2="38" stroke="url(#lG1)" stroke-width="1.1" opacity=".5" />
+                <line x1="30" y1="15" x2="30" y2="27" stroke="#06b6d4" stroke-width="1" opacity=".7" />
+                <line x1="16" y1="38" x2="28" y2="31" stroke="#06b6d4" stroke-width="1" opacity=".7" />
+                <line x1="44" y1="38" x2="32" y2="31" stroke="#06b6d4" stroke-width="1" opacity=".7" />
+                <circle cx="30" cy="30" r="4" fill="#f5f5fa" />
+                <circle cx="30" cy="30" r="4" fill="none" stroke="url(#lG1)" stroke-width="1.2" />
+                <circle cx="30" cy="30" r="1.7" fill="#06b6d4" filter="url(#lNodeGlow)" />
+                <circle cx="30" cy="15" r="3" fill="#f5f5fa" />
+                <circle cx="30" cy="15" r="3" fill="none" stroke="#818cf8" stroke-width="1.1" />
+                <circle cx="30" cy="15" r="1.3" fill="#818cf8" filter="url(#lNodeGlow)" />
+                <circle cx="16" cy="38" r="2.5" fill="#f5f5fa" />
+                <circle cx="16" cy="38" r="2.5" fill="none" stroke="#06b6d4" stroke-width="1" />
+                <circle cx="16" cy="38" r="1.1" fill="#06b6d4" filter="url(#lNodeGlow)" />
+                <circle cx="44" cy="38" r="2.5" fill="#f5f5fa" />
+                <circle cx="44" cy="38" r="2.5" fill="none" stroke="#06b6d4" stroke-width="1" />
+                <circle cx="44" cy="38" r="1.1" fill="#06b6d4" filter="url(#lNodeGlow)" />
+                <path d="M28.5 8 L30 4 L31.5 8" fill="none" stroke="#22d3ee" stroke-width="1.1" stroke-linecap="round"
+                    stroke-linejoin="round" opacity=".7" />
+
+                <text x="70" y="25" font-family="'Syne',sans-serif" font-weight="800" font-size="17"
+                    fill="url(#lTextGrad)" letter-spacing="-0.3">AgentForge</text>
+                <rect x="71" y="32" width="28" height="14" rx="4" fill="url(#lG1)" />
+                <text x="85" y="42.5" font-family="'Inter',sans-serif" font-weight="800" font-size="8.5" fill="#fff"
+                    text-anchor="middle" letter-spacing="1.2">AI</text>
+            </svg>
+            <div class="card-label" style="color:rgba(20,20,60,.4)">05 · Light Background Version</div>
+        </div>
+
+    </div>
+</body>
+</html>
